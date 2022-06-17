@@ -14,7 +14,7 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloPaciente
         {
             Db.ExecutarSql("DELETE FROM TBPACIENTE; DBCC CHECKIDENT (TBPACIENTE, RESEED, 0)");
 
-            paciente = new Paciente("José da Silva", "321654987");
+            paciente = new Paciente("Lucas Bleyer", "123456789");
             repositorio = new RepositorioPacienteEmBancoDados();
         }
 
@@ -38,7 +38,7 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloPaciente
             repositorio.Inserir(paciente);
 
             //action
-            paciente.Nome = "João de Moraes";
+            paciente.Nome = "Alexandre Rech";
             paciente.CartaoSUS = "987654321";
             repositorio.Editar(paciente);
 
@@ -81,9 +81,9 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloPaciente
         public void Deve_selecionar_todos_os_pacientes()
         {
             //arrange
-            var p01 = new Paciente("Alberto da Silva", "321654987");
-            var p02 = new Paciente("Maria do Carmo", "321654987");
-            var p03 = new Paciente("Patricia Amorim", "321654987");
+            var p01 = new Paciente("Tales Reig", "321654987");
+            var p02 = new Paciente("Pedro Nunes", "321654987");
+            var p03 = new Paciente("Ane Luisy", "321654987");
 
             var repositorio = new RepositorioPacienteEmBancoDados();
             repositorio.Inserir(p01);

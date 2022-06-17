@@ -19,7 +19,7 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloFuncionario
         {
             Db.ExecutarSql("DELETE FROM TBFUNCIONARIO; DBCC CHECKIDENT (TBFUNCIONARIO, RESEED, 0)");
 
-            funcionario = new Funcionario("José da Silva", "jose.dasilva", "12345678");
+            funcionario = new Funcionario("Lucas Bleyer", "lucas_bleyer", "123456789");
             repositorio = new RepositorioFuncionarioEmBancoDados();
         }
 
@@ -43,9 +43,9 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloFuncionario
             repositorio.Inserir(funcionario);
 
             //action
-            funcionario.Nome = "João de Moraes";
-            funcionario.Login = "joao.demorais";
-            funcionario.Senha = "00000000";
+            funcionario.Nome = "Lucas Oliveira Bleyer";
+            funcionario.Login = "lucas_bleyer";
+            funcionario.Senha = "8888";
             repositorio.Editar(funcionario);
 
             //assert
@@ -87,9 +87,9 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloFuncionario
         public void Deve_selecionar_todos_os_funcionarios()
         {
             //arrange
-            var f0 = new Funcionario("Alberto da Silva", "alberto.dasilva" , "321654987");
-            var f1 = new Funcionario("Maria do Carmo", "maria.docarmo", "111111111");
-            var f2 = new Funcionario("Patricia Amorim", "patricia.amorin", "999999999");
+            var f0 = new Funcionario("Tales Reig", "tales_r" , "1111111111");
+            var f1 = new Funcionario("Pedro Nunes", "pedrinho_n", "222222222");
+            var f2 = new Funcionario("Ane Luisy", "anee_luisy", "333333333");
 
             var repositorio = new RepositorioFuncionarioEmBancoDados();
             repositorio.Inserir(f0);

@@ -19,7 +19,7 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloFornecedor
         {
             Db.ExecutarSql("DELETE FROM TBFORNECEDOR; DBCC CHECKIDENT (TBFORNECEDOR, RESEED, 0)");
 
-            fornecedor = new Fornecedor("Lages Remedios", "49367312111", "lagesremedios@gmail.com", "Lages", "SC");
+            fornecedor = new Fornecedor("Famarcia do Programador", "999999999", "programador_farma@gmail.com", "Lages", "SC");
             repositorio = new RepositorioFornecedorEmBancoDados();
         }
 
@@ -43,10 +43,10 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloFornecedor
             repositorio.Inserir(fornecedor);
 
             //action
-            fornecedor.Nome = "Santa Catarina Remedios";
-            fornecedor.Telefone = "49736283991";
-            fornecedor.Email = "scremedios@gmail.com";
-            fornecedor.Cidade = "Florianopolis";
+            fornecedor.Nome = "Farmácia do Programador";
+            fornecedor.Telefone = "9999999999999";
+            fornecedor.Email = "farma_programador@gmail.com";
+            fornecedor.Cidade = "São Joaquim";
             fornecedor.Estado = "SC";
 
             repositorio.Editar(fornecedor);
@@ -90,9 +90,9 @@ namespace ControleMedicamentos.Infra.BancoDados.Tests.ModuloFornecedor
         public void Deve_selecionar_todos_os_fornecedores()
         {
             //arrange
-            var f0 = new Fornecedor("Floripa Remedios", "49726373899", "floripa@gmail.com", "Florianopolis", "SC");
-            var f1 = new Fornecedor("Campeche Remedios", "49877393799", "campeche@gmail.com", "Florianopolis", "SC");
-            var f2 = new Fornecedor("Camboriu Remedios", "49211723422", "camboriu@gmail.com" , "Balneario Camboriu", "SC");
+            var f0 = new Fornecedor("Remedios Brasil", "9999999999", "remedios_brasi@gmail.com", "São Paulo", "SP");
+            var f1 = new Fornecedor("Remedios Lages", "8888888888", "remedios_lages@gmail.com", "Lages", "SC");
+            var f2 = new Fornecedor("Remedios Pfizer", "7777777777", "pfizer@gmail.com" , "Alemanha", "BL");
 
             var repositorio = new RepositorioFornecedorEmBancoDados();
             repositorio.Inserir(f0);
